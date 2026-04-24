@@ -10,7 +10,6 @@
 <body>
 
     <nav class="navbar" id="navbar">
-        <a href="#hero" class="nav-logo">TE</a>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#education">Education</a></li>
@@ -19,6 +18,11 @@
             <li><a href="#skills">Skills</a></li>
         </ul>
         <a href="Resume_4-23-26.pdf" download class="nav-resume">Résumé</a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
 
     <section class="hero" id="hero">
@@ -215,6 +219,21 @@
         // Navbar shadow on scroll
         window.addEventListener('scroll', () => {
             document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+        });
+
+        // Hamburger toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        navToggle.addEventListener('click', () => {
+            const isOpen = navbar.classList.toggle('nav-open');
+            navToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Close menu when a nav link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navbar.classList.remove('nav-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
         });
     </script>
 
