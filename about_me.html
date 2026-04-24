@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas Eubank</title>
+    <meta name="description" content="Thomas Eubank — Software Engineer & Computer Science student at Morehead State University.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <a href="#hero" class="nav-logo">TE</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+        </ul>
+        <a href="Resume_4-23-26.pdf" download class="nav-resume">Résumé</a>
+    </nav>
+
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <p class="hero-label">Software Engineer · Eubank, KY</p>
+            <h1>Thomas <span>Eubank</span></h1>
+            <div class="hero-actions">
+                <a href="mailto:thomas.eubank516@gmail.com" class="btn">Get in Touch</a>
+                <a href="Resume_4-23-26.pdf" download class="btn btn--outline">Download Résumé</a>
+            </div>
+        </div>
+        <div class="scroll-hint">↓</div>
+    </section>
+
+    <section class="section fade-in" id="about">
+        <div class="container container--narrow">
+            <h2>About</h2>
+            <p class="bio">Hi, I'm Thomas Eubank. Computers have been my passion for as long as I can remember, and I'm eager to build a career around them. My experience centers on two things I genuinely enjoy: optimizing performance-critical C++ systems and shipping full-stack web applications that real teams depend on. I'm actively looking for software engineering opportunities — and if you have a project that Eubank Technologies could take on, reach out. Let's build something.</p>
+        </div>
+    </section>
+
+    <section class="section fade-in" id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="card">
+                <p class="meta">Graduating May 2026</p>
+                <h3>Morehead State University</h3>
+                <p>B.S. Computer Science &nbsp;·&nbsp; GPA: 3.6</p>
+                <p class="coursework">Algorithms · Data Structures · Machine Learning · Network Security · Parallel Programming · Software Engineering · Computer Architecture</p>
+                <div class="tag-row">
+                    <span class="tag tag--award">MSU ACM Outstanding CS Student</span>
+                    <span class="tag tag--award">ACM Vice President</span>
+                </div>
+                <a href="https://www.youtube.com/msueaglevideo" target="_blank" rel="noopener noreferrer" class="link-arrow">Watch Commencement →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--dark fade-in" id="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <h3>IT Intern</h3>
+                            <p class="timeline-company">Team Modern</p>
+                        </div>
+                        <p class="meta">June – Aug 2025</p>
+                    </div>
+                    <ul>
+                        <li>Engineered and reconstructed dozens of C# programs during a server migration.</li>
+                        <li>Deployed 100+ C# applications for electronic delivery of warehouse reports.</li>
+                        <li>Updated legacy programs to .NET Framework 4.7.2 and standardized SQL database organization.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <h3>IT Helpdesk Worker</h3>
+                            <p class="timeline-company">Morehead State University</p>
+                        </div>
+                        <p class="meta">Oct 2023 – Present</p>
+                    </div>
+                    <ul>
+                        <li>Resolved high-volume IT tickets on first contact.</li>
+                        <li>Assisted in the aftermath of a university-wide cyber-attack.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="venture fade-in">
+        <div class="venture-inner">
+            <span class="meta">Founder &amp; Owner</span>
+            <h2>Eubank Technologies</h2>
+            <p>Building software solutions for real-world problems. Currently in early development — stay tuned.</p>
+        </div>
+    </div>
+
+    <section class="section fade-in" id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <p class="meta">Capstone</p>
+                    <h3>Parallel Matrix Library &amp; Neural Network</h3>
+                    <p>17× speedup on 1000×1000 matrix multiplication using Intel SYCL USM. Modular C++ neural network with Adam optimizer and cross-entropy loss, outperforming PyTorch CPU on the UCI thyroid dataset with 40% training time reduction.</p>
+                    <div class="tag-row">
+                        <span class="tag">C++</span><span class="tag">OpenMP</span><span class="tag">SYCL</span>
+                    </div>
+                    <a href="https://github.com/WarmFreezer/neural_network" target="_blank" rel="noopener noreferrer" class="link-arrow">GitHub →</a>
+                </div>
+                <div class="card">
+                    <p class="meta">Extra-Curricular</p>
+                    <h3>Pitcher Analytics</h3>
+                    <p>Full-stack web app for Morehead State Baseball providing advanced TrackMan statistics, visualizations, and PDF reports. Marketed to other colleges.</p>
+                    <div class="tag-row">
+                        <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">JavaScript</span>
+                    </div>
+                    <a href="https://www.pitcher-analytics.org/" target="_blank" rel="noopener noreferrer" class="link-arrow">View Project →</a>
+                </div>
+                <div class="card">
+                    <p class="meta">Internship</p>
+                    <h3>Email Integration NuGet Package</h3>
+                    <p>Integrated and standardized email functionality across hundreds of enterprise C# applications via a custom NuGet package using the Azure API.</p>
+                    <div class="tag-row">
+                        <span class="tag">C#</span><span class="tag">Azure API</span>
+                    </div>
+                    <a href="https://www.nuget.org/packages/ModernEmail" target="_blank" rel="noopener noreferrer" class="link-arrow">NuGet →</a>
+                </div>
+                <div class="card">
+                    <p class="meta">Extra-Curricular</p>
+                    <h3>Eagle Recruitment</h3>
+                    <p>Led an 8-person team building a recruitment web app for the Women's Basketball Team. Pulls from the NJCAA database with an ML model in development for dynamic data interpretation.</p>
+                    <div class="tag-row">
+                        <span class="tag">Python</span><span class="tag">React</span><span class="tag">ML</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <p class="meta">Academic</p>
+                    <h3>Savecation</h3>
+                    <p>Organized a 4-person team to build a travel-budgeting web app applying full Software Engineering principles.</p>
+                    <div class="tag-row">
+                        <span class="tag">Python</span><span class="tag">Streamlit</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <p class="meta">Personal</p>
+                    <h3>Calculator Language Parser</h3>
+                    <p>Lightweight programming language scanner and parser in under 600 lines of C++ with tokenization, syntax analysis, and error codes.</p>
+                    <div class="tag-row">
+                        <span class="tag">C++</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--dark fade-in" id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div>
+                    <p class="meta">Languages</p>
+                    <div class="tag-row">
+                        <span class="tag">C++</span><span class="tag">C#</span><span class="tag">C</span><span class="tag">Java</span><span class="tag">Python</span>
+                    </div>
+                </div>
+                <div>
+                    <p class="meta">Parallel &amp; Systems</p>
+                    <div class="tag-row">
+                        <span class="tag">OpenMP</span><span class="tag">MPI</span><span class="tag">SYCL</span><span class="tag">OneAPI</span>
+                    </div>
+                </div>
+                <div>
+                    <p class="meta">Tools &amp; Concepts</p>
+                    <div class="tag-row">
+                        <span class="tag">Git</span><span class="tag">Linux</span><span class="tag">OOP</span><span class="tag">Concurrency</span><span class="tag">Visual Studio</span><span class="tag">Web Applications</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="fade-in">
+        <p>© 2026 Thomas Eubank</p>
+        <a href="mailto:thomas.eubank516@gmail.com">thomas.eubank516@gmail.com</a>
+    </footer>
+
+    <script>
+        // Scroll reveal
+        const revealObserver = new IntersectionObserver(
+            entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('visible')),
+            { threshold: 0.12 }
+        );
+        document.querySelectorAll('.fade-in').forEach(el => revealObserver.observe(el));
+
+        // Active nav link
+        const sections = document.querySelectorAll('section[id], div[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const navObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+                    if (active) active.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+        sections.forEach(s => navObserver.observe(s));
+
+        // Navbar shadow on scroll
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+        });
+    </script>
+
+</body>
+</html>
