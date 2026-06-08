@@ -16,8 +16,6 @@
             <li><a href="#education">Education</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#leadership">Leadership</a></li>
-            <li><a href="#awards">Awards</a></li>
             <li><a href="#skills">Skills</a></li>
         </ul>
         <a href="ThomasEubank_Resume.pdf" download class="nav-resume">Résumé</a>
@@ -352,6 +350,21 @@
         // Navbar shadow on scroll
         window.addEventListener('scroll', () => {
             document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+        });
+
+        // Hamburger toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        navToggle.addEventListener('click', () => {
+            const isOpen = navbar.classList.toggle('nav-open');
+            navToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Close menu when a nav link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navbar.classList.remove('nav-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
         });
     </script>
 
