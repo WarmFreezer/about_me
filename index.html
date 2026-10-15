@@ -9,8 +9,11 @@
 </head>
 <body>
 
+    <div id="scene" aria-hidden="true"></div>
+
     <nav class="navbar" id="navbar">
         <a href="#hero" class="nav-logo">TE</a>
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#education">Education</a></li>
@@ -25,6 +28,7 @@
         <div class="hero-content">
             <p class="hero-label">Software Engineer · Eubank, KY</p>
             <h1>Thomas <span>Eubank</span></h1>
+            <p class="hero-typed" id="typed">Application Analyst &amp; Developer · C++ · .NET · Full-Stack</p>
             <div class="hero-social">
                 <a href="https://www.linkedin.com/in/thomas-eubank" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -87,6 +91,20 @@
                         <li>Engineered a multi-tenant subscription system (Stripe) supporting account creation and role-based access.</li>
                         <li>Actively demoing to prospective university clients; managing full product lifecycle from requirements through deployment.</li>
                         <li>Utilized Claude Code and GitHub Copilot to maintain development velocity across a solo full-stack codebase.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <h3>Application Analyst &amp; Junior Developer</h3>
+                            <p class="timeline-company">Team Modern</p>
+                        </div>
+                        <p class="meta">08/26 – Present</p>
+                    </div>
+                    <ul>
+                        <li>Migrated legacy invoicing and booking upload programs to a modern environment on .NET 10.</li>
+                        <li>Led SQL Server migration work and built ASP.NET + React web applications with supporting APIs.</li>
+                        <li>Strengthened company application security and automated complex workflows for other departments.</li>
                     </ul>
                 </div>
                 <div class="timeline-item">
@@ -365,6 +383,7 @@
         });
 
         // Hamburger toggle
+        const navbar = document.getElementById('navbar');
         const navToggle = document.querySelector('.nav-toggle');
         navToggle.addEventListener('click', () => {
             const isOpen = navbar.classList.toggle('nav-open');
@@ -378,6 +397,54 @@
                 navToggle.setAttribute('aria-expanded', 'false');
             });
         });
+    </script>
+
+    <script>
+        // Flat scrolling source-code background; add a file here and in code/ to include it
+        const FILES = ['Matrix.cpp', 'nn.cpp', 'Matrix.h'];
+        const KEYWORDS = /\b(namespace|class|struct|const|return|if|else|for|while|new|delete|throw|using|void|int|double|float|bool|size_t|auto|nullptr|static|inline|template|typename|public|private|try|catch)\b/g;
+        const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+
+        // One <div> per line so CSS counters can number them
+        function highlight(src) {
+            return src.split('\n').map(raw => {
+                const line = raw.replace(/\t/g, '    ');
+                const cut = line.indexOf('//');
+                const code = esc(cut < 0 ? line : line.slice(0, cut));
+                const body = line.trim().startsWith('#')
+                    ? `<span class="c-dir">${code}</span>`
+                    : code.replace(KEYWORDS, '<span class="c-kw">$&</span>');
+                return `<div class="ln">${body}${cut < 0 ? '' : `<span class="c-com">${esc(line.slice(cut))}</span>`}</div>`;
+            }).join('');
+        }
+
+        const scene = document.getElementById('scene');
+        FILES.forEach(async file => {
+            const src = await fetch('code/' + file).then(r => r.text()).catch(() => '');
+            if (!src) return;
+            const html = highlight(src);
+            const col = document.createElement('div');
+            col.className = 'code-col';
+            // two copies back to back so translateY(-50%) loops seamlessly
+            col.innerHTML = `<div class="code-tab">${file}</div><div class="code-view"><div class="code-track" style="animation-duration:${src.split('\n').length * 0.4}s"><div class="copy">${html}</div><div class="copy">${html}</div></div></div>`;
+            scene.appendChild(col);
+        });
+
+        // Spotlight: the background brightens around the cursor
+        addEventListener('mousemove', e => {
+            scene.style.setProperty('--mx', e.clientX + 'px');
+            scene.style.setProperty('--my', e.clientY + 'px');
+        });
+
+        // Typed hero tagline (full text stays in the HTML for no-JS and reduced-motion)
+        const typed = document.getElementById('typed');
+        const full = typed.textContent;
+        if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            typed.textContent = '';
+            let n = 0;
+            const tick = () => { typed.textContent = full.slice(0, ++n); if (n < full.length) setTimeout(tick, 45); };
+            setTimeout(tick, 600);
+        }
     </script>
 
 </body>
